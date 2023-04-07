@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE8D292329E031C2007B0539 /* TweetContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D292229E031C2007B0539 /* TweetContentView.swift */; };
+		AE8D292629E0337E007B0539 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE8D292529E0337E007B0539 /* SnapKit */; };
+		AE8D292929E059C0007B0539 /* TweetActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D292829E059C0007B0539 /* TweetActionView.swift */; };
+		AE8D292E29E05D10007B0539 /* TweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D292D29E05D10007B0539 /* TweetView.swift */; };
+		AE8D293029E05D9C007B0539 /* TweetActionButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D292F29E05D9C007B0539 /* TweetActionButtonsView.swift */; };
 		AEEEC6FB29DF457C0012C383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEEC6FA29DF457C0012C383 /* AppDelegate.swift */; };
 		AEEEC6FD29DF457C0012C383 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEEC6FC29DF457C0012C383 /* SceneDelegate.swift */; };
 		AEEEC6FF29DF457C0012C383 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEEC6FE29DF457C0012C383 /* ViewController.swift */; };
@@ -15,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE8D292229E031C2007B0539 /* TweetContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetContentView.swift; sourceTree = "<group>"; };
+		AE8D292829E059C0007B0539 /* TweetActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetActionView.swift; sourceTree = "<group>"; };
+		AE8D292D29E05D10007B0539 /* TweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetView.swift; sourceTree = "<group>"; };
+		AE8D292F29E05D9C007B0539 /* TweetActionButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetActionButtonsView.swift; sourceTree = "<group>"; };
 		AEEEC6F729DF457C0012C383 /* ACBWeek1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACBWeek1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEEEC6FA29DF457C0012C383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEEEC6FC29DF457C0012C383 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,12 +38,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE8D292629E0337E007B0539 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE8D292B29E059D3007B0539 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AE8D292229E031C2007B0539 /* TweetContentView.swift */,
+				AE8D292829E059C0007B0539 /* TweetActionView.swift */,
+				AE8D292D29E05D10007B0539 /* TweetView.swift */,
+				AE8D292F29E05D9C007B0539 /* TweetActionButtonsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AE8D292C29E05CFA007B0539 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		AEEEC6EE29DF457C0012C383 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +82,8 @@
 		AEEEC6F929DF457C0012C383 /* ACBWeek1 */ = {
 			isa = PBXGroup;
 			children = (
+				AE8D292C29E05CFA007B0539 /* Cells */,
+				AE8D292B29E059D3007B0539 /* Views */,
 				AEEEC6FA29DF457C0012C383 /* AppDelegate.swift */,
 				AEEEC6FC29DF457C0012C383 /* SceneDelegate.swift */,
 				AEEEC6FE29DF457C0012C383 /* ViewController.swift */,
@@ -74,12 +104,16 @@
 				AEEEC6F329DF457C0012C383 /* Sources */,
 				AEEEC6F429DF457C0012C383 /* Frameworks */,
 				AEEEC6F529DF457C0012C383 /* Resources */,
+				AE8D292729E0338B007B0539 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ACBWeek1;
+			packageProductDependencies = (
+				AE8D292529E0337E007B0539 /* SnapKit */,
+			);
 			productName = ACBWeek1;
 			productReference = AEEEC6F729DF457C0012C383 /* ACBWeek1.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +142,9 @@
 				Base,
 			);
 			mainGroup = AEEEC6EE29DF457C0012C383;
+			packageReferences = (
+				AE8D292429E0337D007B0539 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = AEEEC6F829DF457C0012C383 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,14 +166,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AE8D292729E0338B007B0539 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AEEEC6F329DF457C0012C383 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE8D292929E059C0007B0539 /* TweetActionView.swift in Sources */,
+				AE8D292329E031C2007B0539 /* TweetContentView.swift in Sources */,
 				AEEEC6FF29DF457C0012C383 /* ViewController.swift in Sources */,
 				AEEEC6FB29DF457C0012C383 /* AppDelegate.swift in Sources */,
+				AE8D292E29E05D10007B0539 /* TweetView.swift in Sources */,
 				AEEEC6FD29DF457C0012C383 /* SceneDelegate.swift in Sources */,
+				AE8D293029E05D9C007B0539 /* TweetActionButtonsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +403,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AE8D292429E0337D007B0539 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AE8D292529E0337E007B0539 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE8D292429E0337D007B0539 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AEEEC6EF29DF457C0012C383 /* Project object */;
 }
