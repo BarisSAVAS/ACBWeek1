@@ -50,8 +50,8 @@
 			children = (
 				AE8D292229E031C2007B0539 /* TweetContentView.swift */,
 				AE8D292829E059C0007B0539 /* TweetActionView.swift */,
-				AE8D292D29E05D10007B0539 /* TweetView.swift */,
 				AE8D292F29E05D9C007B0539 /* TweetActionButtonsView.swift */,
+				AE8D292D29E05D10007B0539 /* TweetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
