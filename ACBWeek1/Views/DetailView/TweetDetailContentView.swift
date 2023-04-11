@@ -1,41 +1,41 @@
 //
-//  TweetContentView.swift
+//  TweetDetailContentView.swift
 //  ACBWeek1
 //
-//  Created by Barış Savaş on 7.04.2023.
+//  Created by Barış Savaş on 11.04.2023.
 //
 
 import UIKit
 import SnapKit
 
-class TweetContentView: UIView {
+class TweetDetailContentView: UIView {
     // MARK: UI Components
-        private let profileImage: UIImageView = {
+    private let profileImage: UIImageView = {
            let profileImage = UIImageView()
             profileImage.image = UIImage(named: "profileImageBuzzLightYear")
             profileImage.clipsToBounds = true
             profileImage.layer.cornerRadius = 25
             return profileImage
         }()
-        private let userName: UILabel = {
+    private let userName: UILabel = {
            let userName = UILabel()
             userName.text = "Baris SAVAS"
             userName.font = .systemFont(ofSize: 16, weight: .bold)
             userName.textColor = UIColor(red: 0.078, green: 0.086, blue: 0.098, alpha: 1)
             return userName
         }()
-        private let userNickName: UILabel = {
+    private let userNickName: UILabel = {
            let userNickName = UILabel()
-            userNickName.text = "@denemedeneme"
+            userNickName.text = "@denemesavas"
             userNickName.font = .systemFont(ofSize: 16, weight: .medium)
             userNickName.textColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
             return userNickName
         }()
-        private let optionsButton: UIButton = {
+    private let optionsButton: UIButton = {
            let optionsButton = UIButton()
             return optionsButton
         }()
-        private let tweetsLabel: UILabel = {
+    private let tweetsLabel: UILabel = {
            let tweetsLabel = UILabel()
             tweetsLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing orem ipsum dolor sit amet, consectetur adipiscing orem ipsum dolor sit amet, consectetur adipiscing orem ipsum"
             tweetsLabel.numberOfLines = 0
@@ -72,12 +72,12 @@ class TweetContentView: UIView {
             make.leading.equalTo(profileImage.snp.trailing).offset(15)
         }
         userNickName.snp.makeConstraints { make in
-            make.top.equalTo(userName.snp.top)
-            make.leading.equalTo(userName.snp.trailing).offset(15)
+            make.top.equalTo(userName.snp.bottom).offset(2)
+            make.leading.equalTo(userName.snp.leading)
         }
         tweetsLabel.snp.makeConstraints { make in
-            make.top.equalTo(userNickName.snp.bottom).offset(5)
-            make.leading.equalTo(userName.snp.leading)
+            make.top.equalTo(userNickName.snp.bottom).offset(15)
+            make.leading.equalTo(profileImage.snp.leading)
             make.trailing.equalToSuperview().offset(-3)
         }
     }

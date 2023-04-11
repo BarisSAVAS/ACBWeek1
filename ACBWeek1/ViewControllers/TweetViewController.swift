@@ -12,7 +12,7 @@ class TweetViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(TweetsTableViewCell.self, forCellReuseIdentifier: TweetsTableViewCell.identifier)
+        tableView.register(DetailTweetsTableViewCell.self, forCellReuseIdentifier: DetailTweetsTableViewCell.identifier)
         return tableView
     }()
     override func viewDidLoad() {
@@ -28,11 +28,11 @@ class TweetViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell  = tableView.dequeueReusableCell(withIdentifier: TweetsTableViewCell.identifier, for: indexPath)
+        let cell  = tableView.dequeueReusableCell(withIdentifier: DetailTweetsTableViewCell.identifier, for: indexPath)
         return cell
     }
 }

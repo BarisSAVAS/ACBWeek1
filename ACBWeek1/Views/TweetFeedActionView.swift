@@ -36,28 +36,28 @@ class TweetFeedActionView: UIView {
     private let commentButton: UIButton = {
         let commentButton = UIButton()
         commentButton.setImage(UIImage(named: "CommentButton"), for: .normal)
-        commentButton.tintColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
+        commentButton.tintColor = UIColor(red: 0.4431, green: 0.4627, blue: 0.4824, alpha: 1) 
         return commentButton
     }()
         //RetweetButton
     private let retweetButton: UIButton = {
        let retweetButton = UIButton()
-        retweetButton.setImage(UIImage(named: "yusufRetweet"), for: .normal)
-        retweetButton.tintColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
+        retweetButton.setImage(UIImage(named: "RetweetButton"), for: .normal)
+        retweetButton.tintColor = UIColor(red: 0.4431, green: 0.4627, blue: 0.4824, alpha: 1)
         return retweetButton
     }()
         //LikeButton
     private let likeButton: UIButton = {
        let likeButton = UIButton()
         likeButton.setImage(UIImage(named: "LikeButton"), for: .normal)
-        likeButton.tintColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
+        likeButton.tintColor = UIColor(red: 0.4431, green: 0.4627, blue: 0.4824, alpha: 1)
         return likeButton
     }()
         //SharedButton
     private let sharedButton: UIButton = {
        let sharedButton = UIButton()
         sharedButton.setImage(UIImage(named: "ShareButton"), for: .normal)
-        sharedButton.tintColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
+        sharedButton.tintColor = UIColor(red: 0.4431, green: 0.4627, blue: 0.4824, alpha: 1)
         return sharedButton
     }()
     // MARK: Lifecycle
