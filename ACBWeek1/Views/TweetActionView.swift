@@ -59,9 +59,9 @@ class TweetActionView:UIView {
         constraintsUIComponents()
         
     }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
+    //override func layoutSubviews() {
+      //  super.layoutSubviews()
+    //}
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -69,28 +69,34 @@ class TweetActionView:UIView {
     private func constraintsUIComponents() {
         
         retweetsNumber.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(7)
+            make.top.equalToSuperview().offset(195)
             make.leading.equalToSuperview().offset(10)
+            //make.bottom.equalToSuperview().offset(-5)
         }
         retweetsLabel.snp.makeConstraints { make in
             make.top.equalTo(retweetsNumber.snp.top)
             make.leading.equalTo(retweetsNumber.snp.trailing).offset(7)
+            //make.bottom.equalToSuperview().offset(-5)
         }
         likesNumber.snp.makeConstraints { make in
             make.top.equalTo(retweetsNumber.snp.top)
             make.leading.equalTo(retweetsLabel.snp.trailing).offset(15)
+            //make.bottom.equalToSuperview().offset(-5)
         }
         likesLabel.snp.makeConstraints { make in
             make.top.equalTo(retweetsNumber.snp.top)
             make.leading.equalTo(likesNumber.snp.trailing).offset(7)
+            //make.bottom.equalToSuperview().offset(-5)
         }
         quoteNumber.snp.makeConstraints { make in
             make.top.equalTo(retweetsNumber.snp.top)
             make.leading.equalTo(likesLabel.snp.trailing).offset(15)
+            //make.bottom.equalToSuperview().offset(-5)
         }
         quoteLabel.snp.makeConstraints { make in
             make.top.equalTo(retweetsNumber.snp.top)
             make.leading.equalTo(quoteNumber.snp.trailing).offset(7)
+            //make.bottom.equalToSuperview().offset(-5)
         }
         
     }

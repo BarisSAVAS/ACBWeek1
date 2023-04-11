@@ -42,11 +42,12 @@ class TweetActionButtonsView: UIView {
         addSubview(retweetButton)
         addSubview(likeButton)
         addSubview(sharedButton)
+        constraintsUIComponents()
         
     }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
+    //override func layoutSubviews() {
+      //  super.layoutSubviews()
+    //}
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -55,18 +56,22 @@ class TweetActionButtonsView: UIView {
         commentButton.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
             make.leading.equalToSuperview().offset(10)
+            make.bottom.equalToSuperview().offset(-5)
         }
         retweetButton.snp.makeConstraints { make in
             make.top.equalTo(commentButton.snp.top)
             make.leading.equalTo(commentButton.snp.trailing).offset(25)
+            make.bottom.equalToSuperview().offset(-5)
         }
         likeButton.snp.makeConstraints { make in
             make.top.equalTo(commentButton.snp.top)
             make.leading.equalTo(retweetButton.snp.trailing).offset(25)
+            make.bottom.equalToSuperview().offset(-5)
         }
         sharedButton.snp.makeConstraints { make in
             make.top.equalTo(commentButton.snp.top)
             make.leading.equalTo(likeButton.snp.trailing).offset(25)
+            make.bottom.equalToSuperview().offset(-5)
         }
     }
 }

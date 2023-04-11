@@ -15,21 +15,23 @@ class TweetContentView: UIView {
        let profileImage = UIImageView()
         profileImage.image = UIImage(named: "profileImageBuzzLightYear")
         profileImage.clipsToBounds = true
-        profileImage.layer.cornerRadius = 30
+        profileImage.layer.cornerRadius = 40
         return profileImage
     }()
     
     private let userName: UILabel = {
        let userName = UILabel()
         userName.text = "Baris SAVAS"
-        userName.font = UIFont(name: ".SFProText-Regular", size: 19)
+        userName.font = .systemFont(ofSize: 16, weight: .bold)
+        userName.textColor = UIColor(red: 0.078, green: 0.086, blue: 0.098, alpha: 1)
         return userName
     }()
     
     private let userNickName: UILabel = {
        let userNickName = UILabel()
-        userNickName.text = "@barissavass"
-        userNickName.font = UIFont(name: ".SFProText-Regular", size: 19)
+        userNickName.text = "@denemedeneme"
+        userNickName.font = .systemFont(ofSize: 16, weight: .medium)
+        userNickName.textColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
         return userNickName
     }()
     
@@ -38,14 +40,14 @@ class TweetContentView: UIView {
         return optionsButton
     }()
     
-     let tweetsLabel: UILabel = {
+    private let tweetsLabel: UILabel = {
        let tweetsLabel = UILabel()
-        tweetsLabel.text  = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur"
+        tweetsLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing"
         tweetsLabel.numberOfLines = 0
-        tweetsLabel.font = UIFont(name: ".SFProText-Regular", size: 19)
+        tweetsLabel.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 19.0)
         return tweetsLabel
     }()
-    
+    //Date
     // MARK: LifeCycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,6 +61,7 @@ class TweetContentView: UIView {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
+        
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -68,28 +71,23 @@ class TweetContentView: UIView {
     
     private func constraintsUIComponents() {
         profileImage.snp.makeConstraints { make in
+            make.height.equalTo(80)
+            make.width.equalTo(80)
             make.top.equalToSuperview().offset(10)
             make.leading.equalToSuperview().offset(15)
-            make.height.equalTo(60)
-            make.width.equalTo(60)
         }
         userName.snp.makeConstraints { make in
-            make.top.equalTo(profileImage.snp.top).offset(5)
+            make.top.equalTo(profileImage.snp.top).offset(15)
             make.leading.equalTo(profileImage.snp.trailing).offset(15)
         }
         userNickName.snp.makeConstraints { make in
             make.top.equalTo(userName.snp.top)
             make.leading.equalTo(userName.snp.trailing).offset(15)
         }
-        optionsButton.snp.makeConstraints { make in
-            make.top.equalTo(userName.snp.top)
-            make.leading.equalTo(userNickName.snp.trailing).offset(15)
-        }
         tweetsLabel.snp.makeConstraints { make in
-            make.top.equalTo(profileImage.snp.bottom).offset(15)
+            make.top.equalTo(userNickName.snp.bottom).offset(45)
             make.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
-            make.bottom.equalToSuperview().offset(-5)
+            //make.trailing.equalToSuperview().offset(-5)
         }
     }
 }
