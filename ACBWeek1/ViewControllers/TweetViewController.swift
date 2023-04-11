@@ -1,14 +1,15 @@
 //
-//  ViewController.swift
+//  TweetViewController.swift
 //  ACBWeek1
 //
-//  Created by Barış Savaş on 6.04.2023.
+//  Created by Barış Savaş on 11.04.2023.
 //
 
 import UIKit
+import SnapKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class TweetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(TweetsTableViewCell.self, forCellReuseIdentifier: TweetsTableViewCell.identifier)
@@ -26,17 +27,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             $0.edges.equalToSuperview()
         }
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TweetsTableViewCell.identifier, for: indexPath)
+        let cell  = tableView.dequeueReusableCell(withIdentifier: TweetsTableViewCell.identifier, for: indexPath)
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
-    }
 }
-
