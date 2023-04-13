@@ -11,14 +11,15 @@ class TweetDetailView: UIView {
     // MARK: Views
     let tweetDetailContentView = TweetDetailContentView()
     let tweetActionView = TweetActionView()
-    let tweetActionButtonsView = TweetActionButtonsView()
+    let tweetDetailActionButtonsView = TweetDetailActionButtonsView()
+    
     //let tweetFeedActionView = TweetFeedActionView()
     // MARK: Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(tweetDetailContentView)
         addSubview(tweetActionView)
-        addSubview(tweetActionButtonsView)
+        addSubview(tweetDetailActionButtonsView)
         //addSubview(tweetFeedActionView)
         constraintsViews()
     }
@@ -47,7 +48,7 @@ class TweetDetailView: UIView {
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-        tweetActionButtonsView.snp.makeConstraints { make in
+        tweetDetailActionButtonsView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.bottom.equalToSuperview()
             make.leading.equalToSuperview()

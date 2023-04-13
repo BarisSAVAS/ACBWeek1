@@ -52,6 +52,21 @@ class TweetActionView : UIView {
         quoteLabel.font = .systemFont(ofSize: 16, weight: .light)
         return quoteLabel
     }()
+    
+    private let separatorLine: UILabel = {
+        let separatorLine = UILabel()
+        separatorLine.frame = CGRect(x: 0, y: 0, width: 340, height: 0)
+        separatorLine.backgroundColor = .white
+         
+        var stroke = UIView()
+        stroke.bounds = separatorLine.bounds.insetBy(dx: -0.17, dy: -0.17)
+        stroke.center = separatorLine.center
+        separatorLine.addSubview(stroke)
+        separatorLine.bounds = separatorLine.bounds.insetBy(dx: -0.17, dy: -0.17)
+        stroke.layer.borderWidth = 0.63
+        stroke.layer.borderColor = UIColor(red: 0.741, green: 0.773, blue: 0.804, alpha: 1).cgColor
+        return separatorLine
+    }()
     // MARK: Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -61,6 +76,7 @@ class TweetActionView : UIView {
         addSubview(likesLabel)
         addSubview(quoteNumber)
         addSubview(quoteLabel)
+        addSubview(separatorLine)
         constraintsUIComponents()
     }
     required init?(coder: NSCoder) {
@@ -68,6 +84,10 @@ class TweetActionView : UIView {
     }
     // MARK: UI Constraints
     private func constraintsUIComponents() {
+        separatorLine.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(200)
+            make.leading.equalToSuperview().offset(40)
+        }
         retweetsNumber.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(215)
             make.leading.equalToSuperview().offset(40)

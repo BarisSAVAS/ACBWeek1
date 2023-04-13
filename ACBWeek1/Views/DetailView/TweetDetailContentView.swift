@@ -43,6 +43,14 @@ class TweetDetailContentView: UIView {
             tweetsLabel.textColor = UIColor(red: 0.078, green: 0.086, blue: 0.098, alpha: 1)
             return tweetsLabel
         }()
+    private let dateLabel: UILabel = {
+        let date = UILabel()
+        let nowDate = Date()
+        date.text = "\(nowDate.description)"
+        date.textColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
+        date.font = .systemFont(ofSize: 16, weight: .light)
+        return date
+    }()
     // MARK: LifeCycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,6 +59,7 @@ class TweetDetailContentView: UIView {
         addSubview(userNickName)
         addSubview(optionsButton)
         addSubview(tweetsLabel)
+        addSubview(dateLabel)
         constraintsUIComponents()
     }
     override func layoutSubviews() {
@@ -79,6 +88,10 @@ class TweetDetailContentView: UIView {
             make.top.equalTo(userNickName.snp.bottom).offset(15)
             make.leading.equalTo(profileImage.snp.leading)
             make.trailing.equalToSuperview().offset(-3)
+        }
+        dateLabel.snp.makeConstraints { make in
+            make.top.equalTo(tweetsLabel.snp.bottom).offset(15)
+            make.leading.equalTo(tweetsLabel.snp.leading)
         }
     }
 }

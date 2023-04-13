@@ -9,7 +9,7 @@ import SnapKit
 
 class DetailTweetsTableViewCell: UITableViewCell {
     // MARK: İdentifier
-    static let identifier = "TweetsTableViewCell"
+    static let identifier = "DetailTweetTableViewCell"
     // MARK: Views
     let tweetDetailView = TweetDetailView()
     // MARK: Lifecycle
