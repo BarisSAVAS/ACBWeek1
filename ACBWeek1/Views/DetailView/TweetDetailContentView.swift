@@ -51,6 +51,19 @@ class TweetDetailContentView: UIView {
         date.font = .systemFont(ofSize: 16, weight: .light)
         return date
     }()
+    private let statisticsNumber: UILabel = {
+       let statisticsNumber = UILabel()
+        statisticsNumber.text = "2342"
+        statisticsNumber.textColor = UIColor(red: 0.078, green: 0.086, blue: 0.098, alpha: 1)
+        statisticsNumber.font = .systemFont(ofSize: 16, weight: .bold)
+        return statisticsNumber
+    }()
+    private let statisticsLabel: UILabel = {
+       let statisticsLabel = UILabel()
+        statisticsLabel.text = "Viewers"
+        statisticsLabel.textColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
+        return statisticsLabel
+    }()
     // MARK: LifeCycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,6 +73,8 @@ class TweetDetailContentView: UIView {
         addSubview(optionsButton)
         addSubview(tweetsLabel)
         addSubview(dateLabel)
+        addSubview(statisticsNumber)
+        addSubview(statisticsLabel)
         constraintsUIComponents()
     }
     override func layoutSubviews() {
@@ -92,6 +107,14 @@ class TweetDetailContentView: UIView {
         dateLabel.snp.makeConstraints { make in
             make.top.equalTo(tweetsLabel.snp.bottom).offset(15)
             make.leading.equalTo(tweetsLabel.snp.leading)
+        }
+        statisticsNumber.snp.makeConstraints { make in
+            make.top.equalTo(dateLabel.snp.top)
+            make.leading.equalTo(dateLabel.snp.trailing).offset(15)
+        }
+        statisticsLabel.snp.makeConstraints { make in
+            make.top.equalTo(statisticsNumber.snp.top)
+            make.leading.equalTo(statisticsNumber.snp.trailing).offset(5)
         }
     }
 }

@@ -52,6 +52,7 @@ class TweetActionView : UIView {
         quoteLabel.font = .systemFont(ofSize: 16, weight: .light)
         return quoteLabel
     }()
+
     
     private let separatorLine: UILabel = {
         let separatorLine = UILabel()
