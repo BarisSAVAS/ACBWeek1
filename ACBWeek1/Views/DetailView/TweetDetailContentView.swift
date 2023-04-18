@@ -26,7 +26,7 @@ class TweetDetailContentView: UIView {
         }()
     private let userNickName: UILabel = {
            let userNickName = UILabel()
-            userNickName.text = "@denemesavas"
+            userNickName.text = "@denemedeneme"
             userNickName.font = .systemFont(ofSize: 16, weight: .medium)
             userNickName.textColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
             return userNickName

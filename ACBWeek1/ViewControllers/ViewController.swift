@@ -16,7 +16,6 @@ class BaseTableViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
-    
     let tableView: UITableView = {
         let tableView = UITableView()
         return tableView
@@ -24,7 +23,6 @@ class BaseTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -70,7 +68,11 @@ class ViewController: BaseTableViewController{
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let startTime = Date()
         navigateToDetailScreen()
+        let finishTime = Date()
+        let duration = finishTime.timeIntervalSince(startTime)
+        print("\(duration)")
     }
 }
 

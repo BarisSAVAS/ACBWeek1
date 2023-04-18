@@ -65,6 +65,18 @@ class ProfileHeaderView: UIView {
         locationLabel.textColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
         return locationLabel
     }()
+    private let accountCreateDateIcon: UIImageView = {
+        let icon = UIImageView()
+        icon.image = UIImage(named:"AccountCreateIcon")
+        return icon
+    }()
+    private let accountCreateDate: UILabel = {
+       let accountCreateDate = UILabel()
+        accountCreateDate.text = "Agustos 2020 tarihinde katıldı"
+        accountCreateDate.font = .systemFont(ofSize: 16, weight: .medium)
+        accountCreateDate.textColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
+        return accountCreateDate
+    }()
     private let followersNumber: UILabel = {
        let followersNumber = UILabel()
         followersNumber.text = "999"
@@ -103,6 +115,8 @@ class ProfileHeaderView: UIView {
         addSubview(userNickName)
         addSubview(bioLabel)
         addSubview(locationPin)
+        addSubview(accountCreateDateIcon)
+        addSubview(accountCreateDate)
         addSubview(locationLabel)
         addSubview(followersNumber)
         addSubview(followersLabel)
@@ -156,8 +170,17 @@ class ProfileHeaderView: UIView {
             make.top.equalTo(bioLabel.snp.bottom).offset(5)
             make.leading.equalTo(locationPin.snp.trailing).offset(5)
         }
+        accountCreateDateIcon.snp.makeConstraints { make in
+            make.size.equalTo(18)
+            make.top.equalTo(locationPin.snp.bottom).offset(10)
+            make.leading.equalTo(locationPin.snp.leading)
+        }
+        accountCreateDate.snp.makeConstraints { make in
+            make.top.equalTo(locationPin.snp.bottom).offset(10)
+            make.leading.equalTo(accountCreateDateIcon.snp.trailing).offset(10)
+        }
         followersNumber.snp.makeConstraints { make in
-            make.top.equalTo(headerImage.snp.bottom).offset(150)
+            make.top.equalTo(headerImage.snp.bottom).offset(190)
             make.leading.equalTo(userName.snp.leading)
             make.bottom.equalToSuperview().offset(-5)
         }
