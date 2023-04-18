@@ -72,6 +72,7 @@ class ViewController: BaseTableViewController{
         navigateToDetailScreen()
         let finishTime = Date()
         let duration = finishTime.timeIntervalSince(startTime)
+        // Lab da çalışan proje için zaman ölçümü yapıldı
         print("\(duration)")
     }
 }
